@@ -5,7 +5,7 @@ parent: Basics
 title: Glossary
 ---
 
-# Projects using MetaBuild
+# Glossary
 {: .no_toc }
 
 | Item | Description |
