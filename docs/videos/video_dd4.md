@@ -2,10 +2,10 @@
 layout: default
 nav_order: 70
 parent: Videos
-title: "MetaBuild Deep Dive 4"
+title: "Deep Dive 4 - Using the genrule() command"
 ---
 
-## MetaBuild Deep Dive 4 - Using the `genrule()` command
+## MetaBuild Deep Dive 4 - Using the genrule() command
 
 Topics: Using the `genrule()` command.
 

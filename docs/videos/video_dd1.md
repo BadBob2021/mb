@@ -2,7 +2,7 @@
 layout: default
 nav_order: 40
 parent: Videos
-title: "MetaBuild Deep Dive 1"
+title: "Deep Dive 1 - Repos, tests, error reporting, debugging, source code overview"
 ---
 
 ## MetaBuild Deep Dive 1 - Repos, tests, error reporting, debugging, source code overview

@@ -2,7 +2,7 @@
 layout: default
 nav_order: 60
 parent: Videos
-title: "MetaBuild Deep Dive 3"
+title: "Deep Dive 3 - Create project, add build flags, glob operation, filters"
 ---
 
 ## MetaBuild Deep Dive 3 - Create project, add build flags, glob operation, filters

@@ -2,7 +2,7 @@
 layout: default
 nav_order: 130
 parent: Videos
-title: "MetaBuild Deep Dive 10"
+title: "Deep Dive 10 - Option and flavor examples, using `gen_rule` to add a custom preprocessing step/tool"
 ---
 
 ## MetaBuild Deep Dive 10 - Option and flavor examples, using `gen_rule` to add a custom preprocessing step/tool

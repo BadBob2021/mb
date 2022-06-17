@@ -2,7 +2,7 @@
 layout: default
 nav_order: 80
 parent: Videos
-title: "MetaBuild Deep Dive 5"
+title: "Deep Dive 5 - Dependencies, versioning, google test, updating documentation"
 ---
 
 ## MetaBuild Deep Dive 5 - Dependencies, versioning, google test, updating documentation

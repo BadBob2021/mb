@@ -2,7 +2,7 @@
 layout: default
 nav_order: 50
 parent: Videos
-title: "MetaBuild Deep Dive 2"
+title: "Deep Dive 2 - Architecture, build graph, using artifactory to add binaries"
 ---
 
 ## MetaBuild Deep Dive 2 - Architecture, build graph, using artifactory to add binaries
