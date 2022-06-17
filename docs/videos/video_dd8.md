@@ -5,7 +5,7 @@ parent: Videos
 title: Deep Dive 8 - Meta project
 ---
 
-## MetaBuild Deep Dive 8 - Meta project
+## Deep Dive 8 - Meta project
 
 Topics: Using meta project with MetaBuild.
 

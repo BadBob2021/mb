@@ -5,7 +5,7 @@ parent: Videos
 title: Deep Dive 6 - Debugging and parallelism, processing nodes in the build graph
 ---
 
-## MetaBuild Deep Dive 6 - Debugging and parallelism, processing nodes in the build graph
+## Deep Dive 6 - Debugging and parallelism, processing nodes in the build graph
 
 Topics: Debugging and parallelism in MetaBuild, processing nodes in the build graph.
 

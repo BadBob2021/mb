@@ -5,7 +5,7 @@ parent: Videos
 title: Deep Dive 4 - Using the genrule() command
 ---
 
-## MetaBuild Deep Dive 4 - Using the genrule() command
+## Deep Dive 4 - Using the genrule() command
 
 Topics: Using the `genrule()` command.
 

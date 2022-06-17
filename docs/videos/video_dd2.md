@@ -5,7 +5,7 @@ parent: Videos
 title: Deep Dive 2 - Architecture, build graph, using artifactory to add binaries
 ---
 
-## MetaBuild Deep Dive 2 - Architecture, build graph, using artifactory to add binaries
+## Deep Dive 2 - Architecture, build graph, using artifactory to add binaries
 
 Topics: MetaBuild architecture overview, the build graph, using artifactory to add binaries in a project.
 

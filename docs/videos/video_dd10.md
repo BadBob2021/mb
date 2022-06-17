@@ -5,7 +5,7 @@ parent: Videos
 title: Deep Dive 10 - Option and flavor examples, using gen_rule to add a custom preprocessing step/tool
 ---
 
-## MetaBuild Deep Dive 10 - Option and flavor examples, using `gen_rule` to add a custom preprocessing step/tool
+## Deep Dive 10 - Option and flavor examples, using `gen_rule` to add a custom preprocessing step/tool
 
 Topics: Examples of using option and flavor, using `gen_rule` to add a custom preprocessing step/tool.
 

@@ -5,7 +5,7 @@ parent: Videos
 title: Deep Dive 5 - Dependencies, versioning, google test, updating documentation
 ---
 
-## MetaBuild Deep Dive 5 - Dependencies, versioning, google test, updating documentation
+## Deep Dive 5 - Dependencies, versioning, google test, updating documentation
 
 Topics: Handling dependencies in MetaBuild, versioning, example of project using google test, updating the MetaBuild documentation.
 

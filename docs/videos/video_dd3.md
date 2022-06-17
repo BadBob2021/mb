@@ -5,7 +5,7 @@ parent: Videos
 title: Deep Dive 3 - Create project, add build flags, glob operation, filters
 ---
 
-## MetaBuild Deep Dive 3 - Create project, add build flags, glob operation, filters
+## Deep Dive 3 - Create project, add build flags, glob operation, filters
 
 Topics: Creating a MetaBuild project, adding build flags, using the glob operation, using filters.
 

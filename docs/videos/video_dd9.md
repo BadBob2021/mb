@@ -5,7 +5,7 @@ parent: Videos
 title: Deep Dive 9 - Builtin config, defines, option, flavor and build_spec
 ---
 
-## MetaBuild Deep Dive 9 - Builtin config, defines, option, flavor and build_spec
+## Deep Dive 9 - Builtin config, defines, option, flavor and build_spec
 
 Topics: Using builtin config, defines, option, flavor and `build_spec`.
 

@@ -5,7 +5,7 @@ parent: Videos
 title: Deep Dive 1 - Repos, tests, error reporting, debugging, source code overview
 ---
 
-## MetaBuild Deep Dive 1 - Repos, tests, error reporting, debugging, source code overview
+## Deep Dive 1 - Repos, tests, error reporting, debugging, source code overview
 
 Topics: MetaBuild repositories, MetaBuild tests, error reporting and debugging, MetaBuild source code overview.
 

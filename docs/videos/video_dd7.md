@@ -5,7 +5,7 @@ parent: Videos
 title: Deep Dive 7 - Parallelism (async, promise, tracing), TimeLogger and memoized functions
 ---
 
-## MetaBuild Deep Dive 7 - Parallelism (async, promise, tracing), TimeLogger and memoized functions
+## Deep Dive 7 - Parallelism (async, promise, tracing), TimeLogger and memoized functions
 
 Topics: Parallelism in MetaBuild (async, promise, tracing), using TimeLogger and memoized functions.
 
