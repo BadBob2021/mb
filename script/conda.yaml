@@ -1,0 +1,14 @@
+name: MetaBuild-docs
+channels:
+  - conda-forge
+dependencies:
+  - compilers
+  - ruby=2.7.2
+variables:
+  # Without setting these for some hosts Jekyll fails with
+  # ```
+  # Conversion error: Jekyll::Converters::Scss encountered an error while converting 'assets/css/main.scss':
+  # Invalid US-ASCII character "\xE2" on line 54
+  # ```
+  LANG: "en_US.UTF-8"
+  LC_ALL: "en_US.UTF-8"
