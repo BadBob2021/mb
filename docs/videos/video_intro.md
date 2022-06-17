@@ -2,7 +2,7 @@
 layout: default
 nav_order: 20
 parent: Videos
-title: "Introduction to MetaBuild"
+title: Introduction to MetaBuild
 ---
 
 ## Introduction to MetaBuild

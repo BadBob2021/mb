@@ -2,7 +2,7 @@
 layout: default
 nav_order: 30
 parent: Videos
-title: "MetaBuild & UXP"
+title: MetaBuild & UXP
 ---
 
 ## MetaBuild & UXP

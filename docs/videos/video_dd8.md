@@ -2,7 +2,7 @@
 layout: default
 nav_order: 110
 parent: Videos
-title: "Deep Dive 8 - Meta project"
+title: Deep Dive 8 - Meta project
 ---
 
 ## MetaBuild Deep Dive 8 - Meta project

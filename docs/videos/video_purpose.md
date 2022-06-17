@@ -2,7 +2,7 @@
 layout: default
 nav_order: 10
 parent: Videos
-title: "Purpose of MetaBuild"
+title: Purpose of MetaBuild
 ---
 
 ## Purpose of MetaBuild

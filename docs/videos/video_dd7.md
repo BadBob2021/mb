@@ -2,7 +2,7 @@
 layout: default
 nav_order: 100
 parent: Videos
-title: "Deep Dive 7 - Parallelism (async, promise, tracing), TimeLogger and memoized functions"
+title: Deep Dive 7 - Parallelism (async, promise, tracing), TimeLogger and memoized functions
 ---
 
 ## MetaBuild Deep Dive 7 - Parallelism (async, promise, tracing), TimeLogger and memoized functions
