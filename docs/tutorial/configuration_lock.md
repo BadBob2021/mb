@@ -8,7 +8,6 @@ title: Metabuild configuration and lock files
 # Metabuild configuration and lock files
 {: .no_toc }
 
-
 <details open markdown="block">
   <summary>
     Table of contents
