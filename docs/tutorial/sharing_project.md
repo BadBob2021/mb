@@ -20,22 +20,57 @@ title: Sharing a MetaBuild project with other MetaBuild projects
 
 
 
+## Resources (Configuration and lock files)
 
-## Allow other projects using your project
+* A video resource for this section is available [here](https://adobe-my.sharepoint.com/:v:/p/hoshyari/EUU9UNeRYMFEkMdPRRgJcTABVWHc9bXUzOfYbGd947aESA?e=aopMpv)
+* The project used in the video is [here](https://git.corp.adobe.com/meta-samples/tutorial_examples/tree/hoshyari/config/meta_config)
+(It might need improvement; just for the purpose of having something so we can iterate for:
 
-Now you have written your MetaBuild project, and you would like to share it with others. Your new project can now be consumed in the same way other projects are consumed, as described in the [using an existing project tutorial]({{ "/docs/tutorial/existing_project" | relative_url }}). So no new machinery comes to play. Nevertheless, here, we go over the process again for completeness of the tutorial.
+## Overview
 
-- Make sure that the `META.py` of your MetaBuild project is in the root directory of your repository, or at `META/META.py`. See for example the [euclid_ml](https://git.corp.adobe.com/euclid/ml/blob/08b86f4e26548cddf1ac45e70968f5f51d46c40d/META/META.py) project.
-  - See [File structure for specs]({{ "/docs/guides/general/spec_file_structure" | relative_url }}) for more information regarding MetaBuild file structure and projects.
-- Then other MetaBuild projects can simply consume your project in the process mentioned in [existing project tutorial]({{ "/docs/tutorial/existing_project" | relative_url }}). For example, the `euclid_ml` project is consumed in the [stager application](https://git.corp.adobe.com/euclid/stager/tree/792ff56e19acddce6dcffe9e2a248e45c15c5926/META). Here is a simplified version of what is happening there.
-  - Usage of `ml` project is requested via a `project_link()` call [here](https://git.corp.adobe.com/euclid/stager/blob/792ff56e19acddce6dcffe9e2a248e45c15c5926/META/deps.meta.py#L10). By convention we put all the project links inside a `deps.meta.py` file so it is easy to see all dependencies.
-  - Some target or targets in stager use a target from `euclid_ml`, [example](https://git.corp.adobe.com/euclid/stager/blob/792ff56e19acddce6dcffe9e2a248e45c15c5926/META/components/lantern_api.meta.py#L23).
-  - `stager` tells MetaBuild how to retreive `euclid_ml` in the META.lock file, [here](https://git.corp.adobe.com/euclid/stager/blob/792ff56e19acddce6dcffe9e2a248e45c15c5926/META/META.lock#L77-L79). To see the details on how to tell MB where to retreive projects from see the docs for [project_link()]({{ "/docs/api/remote_nodes/project_link" | relative_url }}). The typical ways are [`version=...`]({{ "/docs/api/remote_nodes/project_link#variant-2-version-is-used" | relative_url }}), [`local_link=...`]({{ "/docs/api/remote_nodes/project_link#variant-4-local_link-is-used" | relative_url }}), and [`repo=... commit=...`]({{ "/docs/api/remote_nodes/project_link#variant-1-repo-and-commit-are-used" | relative_url }}). Note that no matter how many `project_link()`s to a project exists (e.g. diamond shaped deps), MetaBuild ensures only a single project is used everywhere in the dependency graph! And that the [root project]({{ "/docs/guides/general/root_target" | relative_url }}) can override where this project is coming from. This is the main goal of MetaBuild, it makes building everythign with the same version of a project easy. Also if a project referenced with `project_link()` is not used (reached by main target), MetaBuild will skip it.
+In MetaBuild, "configurations" are a means for users to interact with MetaBuild. Each configuration has a form: `<prefix>.<name>` 
+For example:
 
-Sometimes you may wish to give your users an option to consume your project as prebuilt to reduce build time. We have covered all the pieces needed to do that in these tutorials. See [Using prebuilts to save time]({{ "/docs/guides/build_artifacts/build_result_caching" | relative_url }}) to see how these building blocks can be assembled together to achieve that.
+Configuration | Prefix | Name
+|----------|----------|----------
+|`xcode.valid_archs`|xcode|valid_archs
+|`projA//deps:googletest_git.commit`|projA//deps:googletest_git|commit
 
-## Upload build results to artifactory
+## Configuring the behaviour of the core of MetaBuild
 
-If you want to upload the build result of you project to artifactory (e.g., apps want to have workable builds, or libraries might want to ship prebuilds to consumers that don't use MetaBuild), MetaBuild gives some functionality to do that as part of the build system. See the guide on [creating release bundles and uploading them]({{ "/docs/guides/build_artifacts/creating_bundles_and_uploading" | relative_url }}).
+Some configurations configure the behaviour of the core of MetaBuild.
+* We try to list all these configs under the `default_config.yaml` file within MetaBuild: https://git.corp.adobe.com/meta-build/meta-build/blob/main/metabuild/config/default_config.yaml (if any is missing, please inform us: <Link to creating a JIRA ticket and #metabuild)
+* Some of these configs are associated with the `option()` nodes within the MetaBuild builtin project:
+-- builtin project: https://git.corp.adobe.com/meta-build/meta-build/tree/0.2.92/metabuild/builtin
+-- Examples `option()` node; the associated config is the value passed to the config= field: https://git.corp.adobe.com/meta-build/meta-build/blob/0.2.92/metabuild/builtin/cmake.meta.py#L40-L55
 
-__Note__: If project B wants to optionally consume project A as prebuilts to save time, and both have MetaBuild specs, the recommendation is to use the mechanism described in [Using prebuilts to save time]({{ "/docs/guides/build_artifacts/build_result_caching" | relative_url }}) in which upload to artifactory happens at project B, and not project A. However, the guides also describe how to simply consume bundles that A provides.
+## Configuring the behaviour of user's code
+
+Other configurations control behaviour of user's code (will get back to this -- tbd).
+
+## Setting the value of these configs
+
+There are two ways to set the value of these configs:
+
+**Method 1 : Edit the config files** 
+
+See this link: https://git.corp.adobe.com/pages/meta-build/docs/guides/config_files/
+
+* You can open the config files and change the values.
+-- Each file has a different format: https://git.corp.adobe.com/pages/meta-build/docs/guides/config_files/#metalock-file. In each format, see how <prefix> and <name> should be specified.
+* Or you can use the `metabuild config` command line executable: https://git.corp.adobe.com/pages/meta-build/docs/cli/metabuild_config/
+-- This is an interface to acheive the same goal as editing the file.
+
+**Method 2 : Override value of configs**
+* As an alternative to the method above, during MetaBuild prepare you can override value of the configs. This is via the `–define <prefix>.<name>=<value>` argument https://git.corp.adobe.com/pages/meta-build/docs/cli/metabuild_config/#command-line-args: (this entry is in this file by mistake, it should be moved to https://git.corp.adobe.com/pages/meta-build/docs/guides/config_files/)
+* Note about `inherit_from`: You can use `<project_name>.inherit_from=other_project_name`. This will cause MetaBuild to read the config file of the other_project and set configs with `prefix=<project_name>` from the lock file of that project. When doing this you have ot make sure that you have a `project_link()` to other_project as well.
+* Note about platform suffix: If you set `<prefix>.<name>_<platform>=value` in a config file, it only sets it for that <platform>. (I think this is missing from the docs).
+
+## How the behaviour of user's code is modified
+
+I just mentioned above at that that option can modify the behaviour of user's code too. Let's see how it is done.
+
+* Some of metabuild's nodes (like `git_checkout()`) can be modfied via configurations. If the target reference (https://git.corp.adobe.com/pages/meta-build/docs/guides/target_refs/) of the `git_checkout` node is `my_proj//deps:my_repo`, the following configs mentioned here (https://git.corp.adobe.com/pages/meta-build/docs/api/git_checkout/) can be used to override the repo or commit of the git_checkout node.
+-- Similarly for `option()` nodes, you can use `target_ref.value`.
+-- In addition `option()` node also has a `config= entry`. This allows setting the value of the option with configs other than target_ref.value. See this [link](https://git.corp.adobe.com/pages/meta-build/docs/api/option/#config). It is always recommended that options have one config with prefix equal to the name of the project they belong to. This will make the config files much more readable.
+* When MetaBuild loads dependency projects with `project_link()`, the means by which that project can be loaded can be configured via configs: https://git.corp.adobe.com/pages/meta-build/docs/api/project_link/#tldr
