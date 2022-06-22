@@ -3,7 +3,7 @@ grand_parent: User Guides
 layout: default
 nav_order: 200
 parent: General
-title: The Pound notation
+title: The Pound Notation
 ---
 
 # The Pound Notation
