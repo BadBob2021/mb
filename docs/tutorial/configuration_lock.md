@@ -2,10 +2,24 @@
 layout: default
 nav_order: 40
 parent: Tutorials
-title: Metabuild configurations and lock files
+title: Metabuild configuration and lock files
 ---
 
-# MetaBuild configurations and lock files
+# Metabuild configuration and lock files
+{: .no_toc }
+
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+
+## Resources
 
 * A video resource for this section is available [here](https://adobe-my.sharepoint.com/:v:/p/hoshyari/EUU9UNeRYMFEkMdPRRgJcTABVWHc9bXUzOfYbGd947aESA?e=aopMpv)
 * The project used in the video is [here](https://git.corp.adobe.com/meta-samples/tutorial_examples/tree/hoshyari/config/meta_config)
