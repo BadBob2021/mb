@@ -25,6 +25,10 @@ You can find versions of MB by taking a look at the tags in the MB repo: [MB ver
 
 ## `stable` and `latest`
 
+* 1
+  - 1
+  - 2
+
 In addition to the version tags, there are two other special tags `latest` and `stable`. `latest` is simply a git tag pointing to the latest MetaBuild version. `stable` is the latest version that has passed the [stable Jenkins pipeline]({{ "/docs/basics/becoming_a_user#metabuild-stable-pipeline" | relative_url }}).
 
 ## General recommendation
